@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angie, Are You Free on Feb 14?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Space+Grotesk:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain"></div>
+    <main class="hero">
+      <section class="card" aria-live="polite">
+        <p class="eyebrow">February 14th, 2026</p>
+        <h1>Angie, are you free on Feb 14?</h1>
+        <p class="subtitle">
+          I have a tiny plan, a big heart, and a completely normal amount of excitement.
+        </p>
+
+        <div class="cta">
+          <button class="btn yes" id="yesButton" type="button">Yes, I am!</button>
+          <button class="btn no" id="noButton" type="button">Nope</button>
+        </div>
+
+        <div class="prompt" id="prompt" hidden>
+          <p class="prompt-text">Then will you be my Valentine?</p>
+          <div class="cta">
+            <button class="btn yes" id="valentineYes" type="button">Absolutely</button>
+          </div>
+        </div>
+
+        <div class="answer" id="answer" hidden>
+          <h2>You said yes!</h2>
+          <p class="answer-text">
+            Best decision of the day. I will plan something sweet and a little magical.
+          </p>
+          <p class="signature">Love, your biggest fan</p>
+        </div>
+      </section>
+    </main>
+
+    <div class="sparkle" aria-hidden="true"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
