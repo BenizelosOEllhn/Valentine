@@ -109,6 +109,9 @@ const moveNoButton = () => {
   void noButton.offsetWidth;
   noButton.classList.add("fleeing");
   noButton.style.position = "fixed";
+  noButton.style.display = "inline-flex";
+  noButton.style.visibility = "visible";
+  noButton.style.opacity = "1";
   noButton.style.left = `${nextX}px`;
   noButton.style.top = `${nextY}px`;
   noButton.style.transform = "translate(0, 0)";
@@ -124,8 +127,21 @@ const moveNoButton = () => {
   }
 };
 
+const handleNoPointer = (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+  if (event.pointerId !== undefined && noButton.setPointerCapture) {
+    noButton.setPointerCapture(event.pointerId);
+  }
+  moveNoButton();
+};
+
 noButton.addEventListener("mouseenter", moveNoButton);
-noButton.addEventListener("click", moveNoButton);
+noButton.addEventListener("pointerdown", handleNoPointer);
+noButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+});
 
 yesButton.addEventListener("click", () => {
   showPrompt();
