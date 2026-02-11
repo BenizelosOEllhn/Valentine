@@ -14,6 +14,7 @@ const phrases = [
 
 let dodgeCount = 0;
 let audioContext;
+let noDetached = false;
 
 const spawnHeart = () => {
   const heart = document.createElement("div");
@@ -88,6 +89,10 @@ const showAnswer = () => {
 
 const moveNoButton = () => {
   dodgeCount += 1;
+  if (!noDetached) {
+    document.body.appendChild(noButton);
+    noDetached = true;
+  }
   const padding = 16;
   const maxX = Math.max(
     padding,
@@ -116,10 +121,6 @@ const moveNoButton = () => {
     const offsetX = (Math.random() - 0.5) * 40;
     const offsetY = (Math.random() - 0.5) * 40;
     spawnSparkle(centerX + offsetX, centerY + offsetY);
-  }
-
-  if (dodgeCount > 1) {
-    showPrompt();
   }
 };
 

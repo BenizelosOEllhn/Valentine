@@ -336,7 +336,7 @@ h1 {
 
 .fleeing {
   position: fixed;
-  z-index: 4;
+  z-index: 6;
   transition: left 0.18s ease, top 0.18s ease, transform 0.18s ease;
   animation: jitter 0.18s ease;
 }
